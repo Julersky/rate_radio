@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-items">
-        <Link to="/">
+        <Link to="/rateradio">
           <div className="footer-kasa-logo">
             <img src={logo_footer} alt="Kasa" />
           </div>
