@@ -1,5 +1,6 @@
 {
-  "name": "kasa",
+  "homepage": "https://julersky.github.io/rate_radio/",
+  "name": "rate_radio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
