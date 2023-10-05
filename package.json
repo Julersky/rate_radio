@@ -1,5 +1,5 @@
 {
-  "homepage": "https://julersky.github.io/rate_radio/",
+  "homepage": "https://julersky.github.io/rateradio",
   "name": "rate_radio",
   "version": "0.1.0",
   "private": true,
@@ -20,8 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
