@@ -7,8 +7,8 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
+      <Route path="/rateradio" element={<Layout />}>
+        <Route path="/rateradio" element={<Home />} />
         {/* <Route path="/a-propos" element={<About />} /> */}
         <Route path="*" element={<Error />} />
       </Route>
