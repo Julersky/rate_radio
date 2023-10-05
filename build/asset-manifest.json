@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/rateradio/static/css/main.b6a11def.css",
-    "main.js": "/rateradio/static/js/main.335edfe7.js",
+    "main.css": "/rateradio/static/css/main.3c07697d.css",
+    "main.js": "/rateradio/static/js/main.47d3e546.js",
     "static/media/rate_radio_logo.jpg": "/rateradio/static/media/rate_radio_logo.ff5807d2e0bc7160badc.jpg",
     "static/media/rate_radio_logo_footer.png": "/rateradio/static/media/rate_radio_logo_footer.2e2ebbc928a1038b79b0.png",
     "index.html": "/rateradio/index.html",
-    "main.b6a11def.css.map": "/rateradio/static/css/main.b6a11def.css.map",
-    "main.335edfe7.js.map": "/rateradio/static/js/main.335edfe7.js.map"
+    "main.3c07697d.css.map": "/rateradio/static/css/main.3c07697d.css.map",
+    "main.47d3e546.js.map": "/rateradio/static/js/main.47d3e546.js.map"
   },
   "entrypoints": [
-    "static/css/main.b6a11def.css",
-    "static/js/main.335edfe7.js"
+    "static/css/main.3c07697d.css",
+    "static/js/main.47d3e546.js"
   ]
 }
