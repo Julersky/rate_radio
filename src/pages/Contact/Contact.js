@@ -3,6 +3,10 @@ import emailjs from '@emailjs/browser';
 import './Contact.scss';
 
 const Contact = () => {
+  console.log("Hello");
+  console.log(process.env);
+
+
   const form = useRef();
   const [isSubmitted, setIsSubmitted] = useState(false); // State to track form submission
   const [emailError, setEmailError] = useState(false); // State to track email validation error
@@ -39,7 +43,7 @@ const Contact = () => {
       return; // Don't submit if email is invalid
     }
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY).then(
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY).then(
       (result) => {
         console.log(result.text);
         setIsSubmitted(true); // Set the submitted state to true
