@@ -39,7 +39,7 @@ const Contact = () => {
       return; // Don't submit if email is invalid
     }
 
-    emailjs.sendForm("service_17t4t5e", "template_88zqeuv", form.current, "rQsy5whYk9_SlyyEb").then(
+    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, REACT_APP_TEMPLATE_ID, form.current, REACT_APP_PUBLIC_KEY).then(
       (result) => {
         console.log(result.text);
         setIsSubmitted(true); // Set the submitted state to true
