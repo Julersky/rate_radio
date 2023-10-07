@@ -6,7 +6,7 @@
   background-color: #333;
   color: #fff;
   padding: 10px 20px;
-
+  
   ul {
     list-style: none;
     display: flex;
@@ -14,7 +14,7 @@
     margin: 0;
     padding: 0;
 
-    li {
+    .nav-link {
       margin: 0 10px;
 
       a {
@@ -28,6 +28,12 @@
       a:hover {
         color: #ff5733; /* Change the color on hover */
         transform: scale(1.1); /* Scale the text on hover (adjust the factor as needed) */
+      }
+    }
+    .nav-link-active{
+      @extend .nav-link;
+      a {
+        color: #ff5733;
       }
     }
   }

@@ -10,14 +10,17 @@ const Navbar = () => {
     <nav className="navbar">
       <ul>
       {isHomePage ? null : (
-          <li>
+          <li className="nav-link">
             <Link to="/rateradio">Accueil</Link>
           </li>
         )}
-        <li>
+        <li className={location.pathname === "/rateradio/replay" ? "nav-link-active" : "nav-link"}>
+          <Link to="replay">Replay</Link>
+        </li>
+        <li className={location.pathname === "/rateradio/a-propos" ? "nav-link-active" : "nav-link"}>
           <Link to="a-propos">A propos</Link>
         </li>
-        <li>
+        <li className={location.pathname === "/rateradio/contact" ? "nav-link-active" : "nav-link"}>
           <Link to="contact">Contact</Link>
         </li>
       </ul>

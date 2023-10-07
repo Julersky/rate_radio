@@ -1,74 +1,89 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.scss';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const form = useRef();
+  const [isSubmitted, setIsSubmitted] = useState(false); // State to track form submission
+  const [emailError, setEmailError] = useState(false); // State to track email validation error
+  const [isEmailValid, setIsEmailValid] = useState(false); // State to track email validation
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleEmailChange = (e) => {
+    const emailValue = e.target.value;
+    
+    // Check if the email is valid
+    const isValid = validateEmail(emailValue);
+    setIsEmailValid(isValid);
+    
+    if (isValid) {
+      setEmailError(false); // Reset email validation error
+    }
+  };
+
+  const sendEmail = (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send an email)
-    console.log('Form data:', formData);
-    // You can add code to send the email using your preferred method/API
+    const emailValue = form.current.email.value;
+
+    // Check if the email is valid
+    const isValid = validateEmail(emailValue);
+    setIsEmailValid(isValid);
+
+    if (!isValid) {
+      setEmailError(true);
+      return; // Don't submit if email is invalid
+    }
+
+    emailjs.sendForm("service_17t4t5e", "template_88zqeuv", form.current, "rQsy5whYk9_SlyyEb").then(
+      (result) => {
+        console.log(result.text);
+        setIsSubmitted(true); // Set the submitted state to true
+        setEmailError(false); // Reset email validation error state
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
     <div className="contact">
-      <header>
-        <h1>Nous contacter</h1>
+      <div className='page_content_title'>
+        <h1>Contactez nous</h1>
         <p>Posez-nous vos questions!</p>
-      </header>
-
+      </div>
       <main>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Nom</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+        <div className='form_container'>
+          <form ref={form} onSubmit={sendEmail}>
+            <div className={`form-group ${isEmailValid ? 'valid-email' : ''} ${emailError ? 'invalid-email' : ''}`}>
+              <label>Nom</label>
+              <input type="text" id="name" name="name"/>
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+            <div className={`form-group ${isEmailValid ? 'valid-email' : ''} ${emailError ? 'invalid-email' : ''}`}>
+              <label>Email</label>
+              <input type="email" id="email" name="email" className={emailError ? 'red-border' : (isEmailValid ? 'green-border' : '')} onChange={handleEmailChange} // Handle email validation on change
+              />
+              {emailError && <p className="error-message">Invalid email address</p>}
+            </div>
 
-          <div className="form-group">
-            <label htmlFor="message">Message</label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-            ></textarea>
-          </div>
+            <div className="form-group">
+              <label>Message</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
 
-          <button type="submit">Envoyer</button>
-        </form>
+            <button type="submit">Envoyer</button>
+          </form>
+          {/* Conditional message based on form submission */}
+          {isSubmitted && (
+            <p className="success-message">Merci pour votre message! <br></br>Nous reviendrons vers vous dans les plus brefs délais</p>
+          )}
+        </div>
       </main>
     </div>
   );
