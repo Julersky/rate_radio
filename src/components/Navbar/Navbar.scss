@@ -3,8 +3,7 @@
 /* Navbar.scss */
 
 .navbar {
-  background-color: #333;
-  color: #fff;
+  // background-color: #333;
   padding: 10px 20px;
   
   ul {
@@ -19,7 +18,7 @@
 
       a {
         text-decoration: none;
-        color: #fff;
+        color: #333;
         font-weight: bold;
         transition: color 0.3s, transform 0.3s; /* Add transitions for color and transform */
         font-size: 16px; /* Set the initial font size */

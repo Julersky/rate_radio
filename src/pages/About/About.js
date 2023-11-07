@@ -2,6 +2,7 @@ import React from 'react';
 import './About.scss';
 
 const About = () => {
+  document.title = "Raté Radio - A propos";
   return (
     <div className="about">
       <main>

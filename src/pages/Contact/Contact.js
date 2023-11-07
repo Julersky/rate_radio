@@ -3,8 +3,7 @@ import emailjs from '@emailjs/browser';
 import './Contact.scss';
 
 const Contact = () => {
-  console.log("Hello");
-  console.log(process.env);
+  document.title = "Raté Radio - Contact";
 
 
   const form = useRef();

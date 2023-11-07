@@ -1,47 +1,41 @@
-import "./Livestream.scss";
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import RadioPlayer from './RadioPlayer/RadioPlayer';
+import Stopwatch from './Stopwatch/Stopwatch';
+import './Livestream.scss';
 
-class LiveStream extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isPlaying: false
-    };
-  }
+const RadioPage = () => {
+  const [isRadioPlaying, setIsRadioPlaying] = useState(false);
 
-  // Function to toggle play/pause
-  togglePlay = () => {
-    const audioElement = this.audioRef.current;
-
-    if (this.state.isPlaying) {
-      audioElement.pause();
-    } else {
-      audioElement.play();
-    }
-
-    this.setState({ isPlaying: !this.state.isPlaying });
+  const startStopwatch = () => {
+    setIsRadioPlaying(true);
   };
 
-  render() {
-    return (
-      <div className="live-stream">
-        <h2>Le Direct</h2>
-        <audio
-          ref={this.audioRef}
-          controls
-          src="your-radio-stream-url.mp3"
-          type="audio/mpeg"
-          onPlay={() => this.setState({ isPlaying: true })}
-          onPause={() => this.setState({ isPlaying: false })}
-        >
-          Your browser does not support the audio element.
-        </audio>
-        {/* <button onClick={this.togglePlay}>
-          {this.state.isPlaying ? 'Pause' : 'Play'}
-        </button> */}
-      </div>
-    );
-  }
-}
+  const pauseStopwatch = () => {
+    setIsRadioPlaying(false);
+  };
+  const [selected, setSelected] = useState(false);
 
-export default LiveStream;
+  return (
+  <div className="wrapper">
+    <div className="collapse">
+      <div className="collapse-header">
+        <div className="radio-player">
+          <RadioPlayer onStart={startStopwatch} onPause={pauseStopwatch} />
+        </div>
+        <h2 className="collapse-title">Direct</h2>
+        <div onClick={() => setSelected(!selected)} className={selected ? "selected" : "unselected"}></div>
+      </div>
+      <div className={selected ? "collapse-body show" : "collapse-body"}>
+        <div className="collapse-content">
+          <Stopwatch isRunning={isRadioPlaying}/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  )
+
+
+};
+
+export default RadioPage;
