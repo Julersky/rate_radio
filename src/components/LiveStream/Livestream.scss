@@ -2,6 +2,7 @@
 
 .wrapper {
   @include flexbox;
+  z-index: 2;
   position: sticky;
   top: 1px;
   flex-direction: column;
