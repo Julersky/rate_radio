@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/rateradio/static/css/main.a24474af.chunk.css",
-    "main.js": "/rateradio/static/js/main.0312b814.chunk.js",
-    "main.js.map": "/rateradio/static/js/main.0312b814.chunk.js.map",
+    "main.css": "/rateradio/static/css/main.3f92d7bd.chunk.css",
+    "main.js": "/rateradio/static/js/main.55d772aa.chunk.js",
+    "main.js.map": "/rateradio/static/js/main.55d772aa.chunk.js.map",
     "runtime-main.js": "/rateradio/static/js/runtime-main.a9a9c9f9.js",
     "runtime-main.js.map": "/rateradio/static/js/runtime-main.a9a9c9f9.js.map",
-    "static/js/2.8bc2947b.chunk.js": "/rateradio/static/js/2.8bc2947b.chunk.js",
-    "static/js/2.8bc2947b.chunk.js.map": "/rateradio/static/js/2.8bc2947b.chunk.js.map",
+    "static/js/2.98c8ea33.chunk.js": "/rateradio/static/js/2.98c8ea33.chunk.js",
+    "static/js/2.98c8ea33.chunk.js.map": "/rateradio/static/js/2.98c8ea33.chunk.js.map",
     "index.html": "/rateradio/index.html",
-    "static/css/main.a24474af.chunk.css.map": "/rateradio/static/css/main.a24474af.chunk.css.map",
-    "static/js/2.8bc2947b.chunk.js.LICENSE.txt": "/rateradio/static/js/2.8bc2947b.chunk.js.LICENSE.txt",
+    "static/css/main.3f92d7bd.chunk.css.map": "/rateradio/static/css/main.3f92d7bd.chunk.css.map",
+    "static/js/2.98c8ea33.chunk.js.LICENSE.txt": "/rateradio/static/js/2.98c8ea33.chunk.js.LICENSE.txt",
     "static/media/rate_radio_logo.ff5807d2.jpg": "/rateradio/static/media/rate_radio_logo.ff5807d2.jpg",
     "static/media/rate_radio_logo_footer.2e2ebbc9.png": "/rateradio/static/media/rate_radio_logo_footer.2e2ebbc9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a9a9c9f9.js",
-    "static/js/2.8bc2947b.chunk.js",
-    "static/css/main.a24474af.chunk.css",
-    "static/js/main.0312b814.chunk.js"
+    "static/js/2.98c8ea33.chunk.js",
+    "static/css/main.3f92d7bd.chunk.css",
+    "static/js/main.55d772aa.chunk.js"
   ]
 }
