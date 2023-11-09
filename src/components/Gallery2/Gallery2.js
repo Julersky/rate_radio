@@ -20,12 +20,14 @@ const Gallery2 = ({data, itemShown}) => {
 
   const selectedTitle = data.find((item) => item.id.videoId === selectedCard)?.snippet.title;
 
- 
+
+  let videos = data.filter((video) => video.id.kind === "youtube#video");
+  console.log(videos) 
 
   return (
     <div className='gallery'>
       <div className="content-section">
-      {data.slice(0, itemShown).map((item, i) => (
+      {videos.slice(0, itemShown).map((item, i) => (
         <div key = {i} className="card"onClick={() => {openCard(item.id.videoId)}}>
           <section className='card-visual'>
             <img className="card-image"src={item.snippet.thumbnails.medium.url} alt={item.snippet.title}/>
