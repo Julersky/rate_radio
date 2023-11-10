@@ -11,13 +11,14 @@ function App() {
   return (
     <Routes>
       <Route path="/rateradio" element={<Layout />}>
-        <Route path="/rateradio/" element={<Home />} />
-        <Route path="a-propos/" element={<About />} />
-        <Route path="contact/" element={<Contact />} />
-        <Route path="replay/" element={<Replay2 />} />
+        <Route index element={<Home />} />
+        <Route path="a-propos" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="replay" element={<Replay2 />} />
         <Route path="*" element={<Error />} />
       </Route>
     </Routes>
+
   );
 }
 
